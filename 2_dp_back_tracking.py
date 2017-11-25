@@ -18,10 +18,13 @@ def back_track(S, V):
         V_ = [v_ for v_ in V if v_ <= S]
         if S !=0 and V_ != []:
             print(S, V_)
+            # back track after choosing one of the possible ways at a hand and get the soln
             count.append(back_track(S-v, V_))
         elif S==0:
+            # if the total = sum return 0
             return 0
         elif V_ == []:
+            # if ran out of options return math.inf
             return math.inf
     print(count)
     print(min(count)+1)

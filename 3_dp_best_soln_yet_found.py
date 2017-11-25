@@ -15,9 +15,10 @@ min_coins[0] = 0
 
 for j in coin_values:
     print(j)
-    for i,k in zip(min_coins, range(S+1)):
-        if i != math.inf and k + j < S+1:
-            min_coins[k + j] = min(min_coins[k + j], i + 1)
+    for i in range(S+1):
+        # if using just the coin 1 what are the possible best solution and update as you see new coins
+        if min_coins[i] != math.inf and i + j <= S:
+            min_coins[i + j] = min(min_coins[i + j], min_coins[i] + 1)
             print(min_coins)
 
 print([i for i in range(S+1)])

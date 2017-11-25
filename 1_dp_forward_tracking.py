@@ -14,9 +14,14 @@ min_coins[0] = 0
 
 
 for i in range(1,S+1):
+    # optimizing for each value before the finale value of S
+    # optimization for the next value to depends on previous optimized value
     for j in range(N):
+        # for each available coin check if it reduces min coin count for the current optimization value
+        # can ignore the first condition in the if clause but including it will reduce complexity
         print(coin_values[j], i, min_coins[i - coin_values[j]]+1, min_coins[i])
         if coin_values[j] <= i and min_coins[i-coin_values[j]]+1 < min_coins[i]:
+            # if true update the number of minimum number of coins required
             min_coins[i] = min_coins[i-coin_values[j]]+1
 
 print([i for i in range(S+1)])
