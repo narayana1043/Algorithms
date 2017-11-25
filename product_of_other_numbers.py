@@ -16,7 +16,7 @@ by calculating:
 
 Do not use division in your solution.
 """
-x = [1, 7, 3, 4]
+x = [2, 7, 3, 4]
 
 def get_products_of_all_ints_except_at_index(x):
 
@@ -28,14 +28,17 @@ def get_products_of_all_ints_except_at_index(x):
     while i < len(x):
         products_of_all_ints_except_index[i] = product_so_far
         product_so_far *= x[i]
+        print(products_of_all_ints_except_index)
         i += 1
 
+    print('\n')
     # after index
     product_so_far = 1
-    i -= 1
+    i = len(x) - 1
     while i >= 0:
-        products_of_all_ints_except_index[i] = product_so_far
+        products_of_all_ints_except_index[i] *= product_so_far
         product_so_far *= x[i]
+        print(products_of_all_ints_except_index)
         i -= 1
 
     return products_of_all_ints_except_index

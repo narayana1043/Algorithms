@@ -64,6 +64,7 @@ def get_max_profit_n(x):
     r_minimum = x[0]
     r_profit = x[1] - x[0]
     for i in range(1, len(x)):
+        print(r_minimum, r_profit)
         potential_profit = x[i] - r_minimum
         r_profit = max(r_profit, potential_profit)
         r_minimum = min(r_minimum, x[i])
@@ -73,5 +74,7 @@ def get_max_profit_n(x):
 
 
 #####################################################################################################################
+print('O(nlogn)')
 print(get_max_profit_nlogn(stock_prices_yesterday))
+print('O(n)')
 print(get_max_profit_n(stock_prices_yesterday))
