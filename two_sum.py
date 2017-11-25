@@ -12,6 +12,8 @@ return [0, 1].
 
 class Solution:
     def two_sum(self, nums, target):
+        # This dict keeps track of the value that is needed to be added to the current number in order to reach the
+        # the target and the index of the current number.
         buff_dict = {}
         for i in range(len(nums)):
             print(buff_dict)
